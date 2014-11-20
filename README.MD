@@ -12,7 +12,7 @@ A simple application to register 'point of interests', and retrieve then by dist
 * ./activator test
 
 ### Using Services
-* List all POIs : http://localhost:9000/pois
+* List all POIs : http://localhost:9000/poi
 * Query POI by ID: http://localhost:9000/poi/:id
 * Query POI neighbors: http://localhost:9000/poi/neighbors?x=:x&y=:y&distance=:distance
 

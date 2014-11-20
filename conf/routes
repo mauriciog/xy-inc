@@ -9,7 +9,7 @@ GET     /                           controllers.Application.index()
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Map POI routes
-GET		/pois						@controllers.POIController.queryAll()
+GET		/poi						@controllers.POIController.queryAll()
 GET		/poi/neighbors				@controllers.POIController.queryNeighborhood(x: Integer, y: Integer, distance: Double)
 GET		/poi/:id					@controllers.POIController.queryById(id: Long)
 POST	/poi						@controllers.POIController.save()

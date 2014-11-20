@@ -1,23 +1,70 @@
 @(message: String)
 
 @main("xy-inc") {
+	
+	<table>
+		<tr style="width: 400px">
+			<td style="width: 60%;">
+				<div ng-controller="POICrtl">
+					<h2>New POI</h2>
+					<p>{{message}}
+			    	<table>
+			    		<tr>
+				    		<td><label for="name">Nome:</label></td>
+				    		<td><input type="text" name="name" ng-model="formPOI.name"/></td>
+				    	</tr>
+				    	
+				    	<tr>
+				    		<td><label for="name">X:</label></td>
+							<td><input type="text" name="x" ng-model="formPOI.x"/></td>
+						</tr>
+						<tr>
+							<td><label for="name">Y:</label></td>
+							<td><input type="text" name="y" ng-model="formPOI.y"/></td>
+						</tr>
+						<tr>
+							<td><button type="button" ng-click="clear()">Clear</button></td>
+							<td><button type="button" ng-click="save()">Save</button></td>
+						</tr>
+					</table>
 
-    <form action="@routes.POIController.save()" method="post">
-    	<table>
-    		<tr>
-	    		<td><label for="name">Nome:</label></td>
-	    		<td><input type="text" name="name"/></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td><label for="name">X:</label></td>
-				<td><input type="number" name="x"/></td>
-			</tr>
-			<tr>
-				<td><label for="name">Y:</label></td>
-				<td><input type="number" name="y"/></td>
-			</tr>
-		</table>
-		<button type="submit">Salvar</button>
-	</form>
+					<h2>Points of Interest</h2>
+					<ul>
+				    	<li ng-repeat="poi in listPOI">
+				      		<span>{{poi.name}} at ({{poi.x}},{{poi.y}})</span>
+				    	</li>
+				  	</ul>
+				</div>
+			</td>
+			<td style="width: 40%; vertical-align: top;">
+				<div ng-controller="POISearchCrtl">
+					<h2>Search POI Neighbors</h2>
+					<p>{{message}}
+			    	<table>
+				    	<tr>
+				    		<td><label for="name">X:</label></td>
+							<td><input type="text" name="x" ng-model="searchPOI.x"/></td>
+						</tr>
+						<tr>
+							<td><label for="name">Y:</label></td>
+							<td><input type="text" name="y" ng-model="searchPOI.y"/></td>
+						</tr>
+						<tr>
+							<td><label for="name">Distance:</label></td>
+							<td><input type="text" name="distance" ng-model="searchPOI.distance"/></td>
+						</tr>
+						<tr>
+							<td><button type="button" ng-click="clear()">Clear</button></td>
+							<td><button type="button" ng-click="search()">Search</button></td>
+						</tr>
+					</table>
+					<ul>
+				    	<li ng-repeat="poi in listPOI">
+				      		<span>{{poi.name}}</span>
+				    	</li>
+				  	</ul>
+				</div>
+			</td>
+		</tr>
+  	</table>
 }
