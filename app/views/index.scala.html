@@ -1,16 +1,23 @@
 @(message: String)
 
-@main("Welcome to Play") {
+@main("xy-inc") {
 
     <form action="@routes.POIController.save()" method="post">
-    	<label for="name">Nome:</label>
-    	<input type="text" name="name"/><br/>
-    	
-    	<label for="name">X:</label>
-		<input type="number" name="x"/><br/>
-		
-		<label for="name">Y:</label>
-		<input type="number" name="y"/><br/>
+    	<table>
+    		<tr>
+	    		<td><label for="name">Nome:</label></td>
+	    		<td><input type="text" name="name"/></td>
+	    	</tr>
+	    	
+	    	<tr>
+	    		<td><label for="name">X:</label></td>
+				<td><input type="number" name="x"/></td>
+			</tr>
+			<tr>
+				<td><label for="name">Y:</label></td>
+				<td><input type="number" name="y"/></td>
+			</tr>
+		</table>
 		<button type="submit">Salvar</button>
 	</form>
 }
