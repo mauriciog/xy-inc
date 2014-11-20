@@ -1,0 +1,16 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+    <form action="@routes.POIController.save()" method="post">
+    	<label for="name">Nome:</label>
+    	<input type="text" name="name"/><br/>
+    	
+    	<label for="name">X:</label>
+		<input type="number" name="x"/><br/>
+		
+		<label for="name">Y:</label>
+		<input type="number" name="y"/><br/>
+		<button type="submit">Salvar</button>
+	</form>
+}
